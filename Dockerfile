@@ -1,5 +1,5 @@
 #도커에 사용될 도커 이미지
-FROM openjdk:11-slim
+FROM openjdk:11-slim as build
 
 LABEL maintainer="Lee-kangchan <lsc4237@gmail.com>"
 
@@ -10,9 +10,6 @@ COPY ${JAR_FILE} app.jar
 
 # unpackage
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf /app.jar)
-
-# execute the application
-ENTRYPOINT ["java","-jar","/app.jar"]
 
 #stage2
 
