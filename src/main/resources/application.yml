@@ -1,0 +1,22 @@
+
+license:
+    create:
+        message: License created %s
+    update:
+        message: License %s updated
+    delete:
+        message: Deleting license with id %s for the organization %s
+spring:
+    application:
+        name: config-server
+    profiles:
+        active: native
+
+    cloud:
+        config:
+            server:
+                native:
+                    search-locations: classpath:/config
+
+server:
+    port: 8071
