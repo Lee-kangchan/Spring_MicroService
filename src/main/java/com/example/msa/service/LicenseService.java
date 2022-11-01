@@ -15,7 +15,6 @@ public class LicenseService {
     MessageSource messages;
     public License getLicense(String organizationId, String licenseId) {
         License license = new License();
-        license.setId(new Random().nextInt(1000));
         license.setLicenseId(licenseId);
         license.setOrganizationId(organizationId);
         license.setDescription("Software Product");

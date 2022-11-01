@@ -3,6 +3,15 @@ spring:
     name: licensing-service
   profiles:
     active: dev
+
   cloud:
     config:
       uri: http://configserver:8071
+      server:
+        native:
+          search-locations: classpath:/config
+
+
+server:
+  port: 8071
+
